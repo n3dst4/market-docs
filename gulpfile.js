@@ -4,6 +4,7 @@ var _ = require("lodash");
 var Q = require("q");
 var fs = require("fs");
 var jade = require("jade");
+var markdown = require( "markdown" ).markdown;
 
 var readFile = Q.denodeify(fs.readFile);
 var writeFile = Q.denodeify(fs.writeFile);
@@ -65,17 +66,20 @@ function getPromiseForSelectionTagText (marketType, selectionTag) {
 
 function getPromiseForThingText (marketType, thingName, thingType) {
 	var path = "snippets/" + marketType.type + "/" + thingType + "s/" + thingName + ".md"
-	gutil.log(path);
 	return readFile(path).then(null, function (reason) {
 		return readFile("snippets/_common/" + thingType + "s/" + thingName + ".md");
 	}).then(null, function (reason) {
 		return "NO TEXT WAS FOUND FOR " + thingType + " " + thingName;
+	}).then(function (mdSource) {
+		return markdown.toHTML(mdSource.toString());
 	});
 }
 
 function getPromiseForMarketTypeText (marketType) {
 	return readFile("snippets/"+marketType + "/index.md").then(null, function (reason) {
-		return "NO index.md WAS FOUND FOR MARKET TYPE " + marketType;
+		return "#" + marketType + "\n\nNO TEXT WAS FOUND FOR MARKET TYPE " + marketType;
+	}).then(function (mdSource) {
+		return markdown.toHTML(mdSource.toString());
 	});
 }
 

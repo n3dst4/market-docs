@@ -1,18 +1,23 @@
 doctype html
 html
+	title=type
 body
-	p=type
+	p
+		a(href="../index.html") &lt; Back to index
 
-	div=text
+
+	div!=text
 
 	h2 Tag Names
 
 	ul
 		each tagName in tagNames
-			li=tagName
+			li!=tagName
 
 	h2 Selection Tags
 
 	ul
 		each selectionTag in selectionTags
-			li=selectionTag
+			li!=selectionTag
+
+	small!=type
