@@ -1,0 +1,1 @@
+this is special text for tag1 for this market type

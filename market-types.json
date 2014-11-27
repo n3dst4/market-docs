@@ -1,0 +1,19 @@
+{
+	"marketTypes": [
+		{
+			"type": "match_winner",
+			"tagNames": ["tag1", "tag2", "tag3"],
+			"selectionTags": ["tag4", "tag5"]
+		},
+		{
+			"type": "most_sixes",
+			"tagNames": ["tag1", "tag6", "tag7"],
+			"selectionTags": ["tag8", "tag4"]
+		},
+		{
+			"type": "most_explosions",
+			"tagNames": ["tag1", "tag2", "tag9"],
+			"selectionTags": ["tag5", "tag10"]
+		}
+	]
+}

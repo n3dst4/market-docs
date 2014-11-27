@@ -1,0 +1,19 @@
+{
+  "name": "market-docs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.8.10",
+    "gulp-util": "^3.0.1",
+    "gulp-webserver": "^0.8.7",
+    "jade": "^1.7.0",
+    "lodash": "^2.4.1",
+    "q": "^1.1.2"
+  }
+}
